@@ -1,0 +1,60 @@
+.header {
+    background-color: #222222;
+    padding: 1.5rem;
+}
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header__content__email {
+    color: #fff;
+    font-size: 1.2rem;
+}
+.header__content__buttons {
+    text-align: end;
+}
+.header__content__buttons .button {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+}
+.header__content__buttons .button--outline-light {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+.header__content__buttons .button--warning {
+    background-color: #ffc107;
+    color: #212529;
+    border: 1px solid #ffc107;
+}
+.header__content__buttons .button:hover {
+    background-color: #f9f9f9;
+    color: #212529;
+}
+.button {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+}
+.button--outline-light {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+.button--warning {
+    background-color: #ffc107;
+    color: #212529;
+    border: 1px solid #ffc107;
+}
+.button:hover {
+    background-color: #f9f9f9;
+    color: #212529;
+}
