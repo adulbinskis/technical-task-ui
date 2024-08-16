@@ -29,6 +29,8 @@ $api.interceptors.response.use((config) => {
         } catch (e) {
             console.log(e)
         }
+    } else if(error.response.status === 400){
+        alert('Unknown user');
     }
     throw error;
 })

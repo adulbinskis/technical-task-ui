@@ -40,7 +40,7 @@ export default class Store {
             const response = await AuthService.login(email, password);
             localStorage.setItem('token', response.data.token);
             this.setAuth(true);
-            this.setUser({email: response.data.email, userId: response.data.userId, userName: response.data.userName});
+            this.setUser({email: response.data.email, userId: response.data.userId, userName: response.data.userName, role: response.data.role});
         } catch (e) {
             throw e;
         }
@@ -63,7 +63,7 @@ export default class Store {
             const response = await axios.get<AuthResponse>(`${API_URL}/identity/refresh`, {withCredentials: true});
             localStorage.setItem('token', response.data.token);
             this.setAuth(true);
-            this.setUser({email: response.data.email, userId: response.data.userId, userName: response.data.userName});
+            this.setUser({email: response.data.email, userId: response.data.userId, userName: response.data.userName, role: response.data.role});
         } catch (error) {
             console.error('Error while checking authentication:', error);
         } finally {

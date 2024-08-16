@@ -5,12 +5,14 @@ import Login from "../Authorization/Login";
 import Register from "../Authorization/Register";
 import "./Header.css"
 import { Context } from '../../store/rootContextProvider';
+import CreateProduct from '../Products/CreateProduct';
 
 const Header: FC = () =>{
     const {store} = useContext(Context);
 
     const [loginModalOpen, setLoginModalOpen] = useState(false);
     const [registerModalOpen, setRegisterModalOpen] = useState(false);
+    const [createOpen, setCreateOpen] = useState(false);
 
     const handleOpenLogin = () => {
         setLoginModalOpen(true);
@@ -31,6 +33,10 @@ const Header: FC = () =>{
         await store.logout();
     };
 
+    const handleOpenCreate = () => {
+        setCreateOpen(true);
+    }
+
     return(
         <header className="header">
             <div className="header__container">
@@ -43,6 +49,9 @@ const Header: FC = () =>{
                     >
                         <i className="fa fa-home"></i> Home
                     </button>
+                    {store.user.role === 'Admin' ?
+                        <button className="button button--outline-light" onClick={handleOpenCreate}>Create Product</button>: null
+                    }
                     
                     </div>
                     <div className="header__content__email">{store.user.userName}</div>
@@ -65,6 +74,9 @@ const Header: FC = () =>{
             </Modal>
             <Modal modalOpen={registerModalOpen} onClose={handleCloseModal}>
                 <Register onClose={handleCloseModal} openLogin={handleOpenLogin} />
+            </Modal>
+            <Modal modalOpen={createOpen} onClose={()=>setCreateOpen(false)}>
+                <CreateProduct onClose={() => setCreateOpen(false)}/>     
             </Modal>
         </header>
 

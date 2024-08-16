@@ -5,8 +5,8 @@ import {observer} from "mobx-react-lite";
 import { Context } from './store/rootContextProvider';
 
 const Header = lazy(() => import('./components/Header/Header'));
-// const MainBoard = lazy(() => import('./components/MainBoard/MainBoard'));
-// const Question = lazy(() => import('./components/Questions/Question'));  
+const MainBoard = lazy(() => import('./components/MainBoard/MainBoard'));
+const Product = lazy(() => import('./components/Products/Product'));  
 
 
 const App: FC =()=> {
@@ -24,8 +24,8 @@ const App: FC =()=> {
       <Router>
           <Header/>
           <Routes>
-             {/* <Route  path='/' element={ <MainBoard/> }/> */}
-            {/* <Route path='/question/:id' element={ <Question/> }/>  */}
+             <Route  path='/' element={ <MainBoard/> }/>
+            <Route path='/product/:id' element={ <Product/> }/> 
           </Routes> 
       </Router>
     </div>

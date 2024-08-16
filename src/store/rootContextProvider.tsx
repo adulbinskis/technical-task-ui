@@ -1,6 +1,5 @@
 import React, { FC, createContext } from 'react';
-// import { QuestionsProvider } from '../components/Question/state/QuestionsProvider';
-// import { AnswersProvider } from '../components/Answers/state/AnswersContext';
+import { ProductsProvider } from '../components/Products/state/ProductProvider';
 import Store from './store';
 
 interface State {
@@ -19,11 +18,9 @@ type Props = { children: React.ReactNode };
 const RootContextProvider: FC<Props> = ({ children }) => {
     return (
         <Context.Provider value={{ store }}>
-            {/* <QuestionsProvider> */}
-                {/* <AnswersProvider> */}
+            <ProductsProvider>
                     {children}
-                {/* </AnswersProvider> */}
-            {/* </QuestionsProvider> */}
+            </ProductsProvider>
         </Context.Provider>
     );
 };

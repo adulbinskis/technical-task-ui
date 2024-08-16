@@ -1,0 +1,48 @@
+.mainBoard {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .mainBoard__search {
+    width: 50svw;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .mainBoard__input {
+    width: 50%;
+    height: 2rem;
+    border-radius: 1rem;
+  }
+  
+  .mainBoard__post {
+    border-bottom: 1px solid rgb(65, 65, 66);
+    border-top: 1px solid rgb(65, 65, 66);
+    color: white;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: fit-content;
+  }
+  
+  .mainBoard__post__content {
+    max-height: 5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+  }
+  
+  .mainBoard__post:hover {
+    background-color: rgb(65, 65, 66);
+  }
+  
+  .pagination__counter {
+    margin-right: 1rem;
+    color: white;
+  }
+  
